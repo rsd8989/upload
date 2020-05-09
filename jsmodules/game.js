@@ -98,7 +98,7 @@ export default class Game{
             ctx.font="30px Arial";
             ctx.fillStyle="white"
             ctx.textAlign="center";
-            ctx.fillText("Game over",this.gameWidth/2,this.gameHeight/2);
+            ctx.fillText("Game over.. press space to restart",this.gameWidth/2,this.gameHeight/2);
         }
 
     }
