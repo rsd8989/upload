@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    img{
+        display: none;
+    }
+    </style>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <img id="ballImage" src="./images/ball.png"/>
+    <img id="brickImage" src="./images/brick.png"/>
+    <div  id="game_container">
+    <div style="height:10%;" id="level_container">
+        <p style=" margin:0; text-align: center;" id="level_info">Welcome to ping pong game...</p>
+
+    </div>
+    <div style="text-align:center; height:70%;" id="canvas_container">
+        <canvas style="border: 1px solid black;" id="canvas"></canvas>
+
+    </div>
+    <div style="height:20%;" id="input_controll_container">
+        <div class="input_controll_wrapper">
+                <button class="btn-left">left</button>
+                <button class="btn-right">right</button>
+                <button class="btn-pause">pause</button>
+                <button class="btn-start">start</button>
+        </div>
+        
+
+
+
+    </div>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="module" src="./jsmodules/index.js"></script>
+
+
+</html>

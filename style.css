@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+}
+#game_container{
+    position: fixed;
+    
+    width:100%;
+    height: 100%;
+    
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+#input_controll_container{
+    padding:5px;
+    text-align: center;
+   
+    display: none;
+}
+.input_controll_wrapper{
+    display: inline-block;
+    
+    position: relative;
+    width:60%;
+    height: 100%;
+    border:2px solid white;
+}
+.input_controll_wrapper button{
+    position: absolute;
+    padding:10px;
+    border-radius: 8px;
+}
+.btn-left{
+    left:0;
+    top:50%;
+}
+.btn-right{
+    right:0;
+    top:50%;
+}
+.btn-start{
+    right:50%;
+    top:0;
+    transform: translateX(50%);
+}
+.btn-pause{
+    right:50%;
+    bottom:0;
+    transform: translateX(50%);
+}
+#canvas{
+    max-width: 900px;
+}
+#level_info{
+    font-size: 30px;
+}
+@media (max-width:420px){
+    #input_controll_container{
+        display:block;
+    }
+    .input_controll_wrapper{
+        width: 100%;
+    }
+    .input_controll_wrapper button{
+        font-weight: bold;
+        padding: 10px;
+        font-size: 20px;
+    }
+    #level_info{
+        font-size: 25px;
+        padding:2px;
+    }
+    
+}
+@media (max-width:350px){
+    .input_controll_wrapper button{
+        font-weight: bold;
+        padding: 5px;
+        font-size: 20px;
+    }
+}
