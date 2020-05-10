@@ -47,13 +47,16 @@ export default class InputHandler{
 
     setButtonHandler(element){
         if(element.className=="btn-left"){
-            element.addEventListener('mousedown',()=>{
+            // element.addEventListener('mousedown',()=>{
                 
-                console.log("keydown")
-                this.paddle.moveLeft();
+            //     console.log("keydown")
+            //     this.paddle.moveLeft();
 
-            })
-            element.addEventListener('mouseup',()=>{
+            // })
+            // element.addEventListener('touchstart',()=>{
+            //     console.log("tourch startd")
+            // })
+            element.addEventListener('keyup',()=>{
                 console.log("moseu up")
                 this.paddle.stop();
 

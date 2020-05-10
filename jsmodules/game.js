@@ -24,6 +24,13 @@ export default class Game{
         this.bricks=[];
         this.levels=[level1,level2];
         this.currentLevel=0;
+
+        this.inputControlls={
+            left:{x:0,y:0},
+            right:{x:0,y:0},
+            start:{x:0,y:0},
+            pause:{x:0,y:0}
+        }
         this.levelInfo=document.getElementById('level_info')
 
     }
