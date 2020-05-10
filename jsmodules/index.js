@@ -48,7 +48,9 @@ ctx.drawImage(leftImage,leftarrowCord.x,leftarrowCord.y,iconSize,iconSize);
 ctx.drawImage(rightImage,rightarrowCord.x,rightarrowCord.y,iconSize,iconSize);
 
 canvas.addEventListener('touchstart',(e)=>{
-    alert("leho")
+    const touchX=e.touches[0].clientX;
+    const touchY=e.touches[0].clientY;
+    alert(touchX,touchY)
 })
 
 function gameLoop(){
