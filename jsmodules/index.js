@@ -87,7 +87,7 @@ canvas.addEventListener('touchend',(e)=>{
     
 
 })
-canvas.addEventListener('tochcancel',(e)=>{
+canvas.addEventListener('touchcancel',(e)=>{
     const touchX=e.touches[0].clientX;
     const touchY=e.touches[0].clientY;
     //alert('touche nded')
