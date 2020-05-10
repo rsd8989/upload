@@ -49,10 +49,17 @@ var startCord={
 ctx.drawImage(start,inputControllCenter,canvas.height-iconSize-10,iconSize,iconSize);
 ctx.drawImage(leftImage,leftarrowCord.x,leftarrowCord.y,iconSize,iconSize);
 ctx.drawImage(rightImage,rightarrowCord.x,rightarrowCord.y,iconSize,iconSize);
-
+ var level_info=document.getElementById('level_info')
+ console.log(level_info)
+ level_info.innerHTML=`
+    ${startCord.x},${startCord.y}
+ `
 canvas.addEventListener('touchstart',(e)=>{
     const touchX=e.touches[0].clientX;
     const touchY=e.touches[0].clientY;
+    level_info.innerHTML+=`
+    ${startCord.x},${startCord.y},${touchX},${touchY}
+ `
     if(touchX>=startCord.x && touchX<=startCord.x+iconSize &&
         touchY>=startCord.y && touchY<=startCord.y+iconSize
     ){
