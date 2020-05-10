@@ -11,9 +11,11 @@ canvas.style.width=screen_width+"px";
 canvas.style.height=screen_height+"px";
 console.log(screen_width)
 console.log(screen_height)
+console.log("client widht")
+console.log(canvas.clientWidth,canvas.clientHeight)
 
-canvas.width=screen_width;
-canvas.height=screen_height;
+canvas.width=canvas.clientWidth;
+canvas.height=canvas.clientHeight;
 
 const SCREEN_WIDTH=screen_width;
 const SCREEN_HEIGHT=screen_height;
@@ -57,7 +59,7 @@ ctx.drawImage(rightImage,rightarrowCord.x,rightarrowCord.y,iconSize,iconSize);
 canvas.addEventListener('touchstart',(e)=>{
     const touchX=e.touches[0].clientX;
     const touchY=e.touches[0].clientY;
-    level_info.innerHTML+=`
+    level_info.innerHTML=`
     ${startCord.x},${startCord.y},${touchX},${touchY}
  `
     if(touchX>=startCord.x && touchX<=startCord.x+iconSize &&
