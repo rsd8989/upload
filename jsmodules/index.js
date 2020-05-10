@@ -56,12 +56,13 @@ ctx.drawImage(rightImage,rightarrowCord.x,rightarrowCord.y,iconSize,iconSize);
  level_info.innerHTML=`
     ${startCord.x},${startCord.y}
  `;
-//  canvas.addEventListener('click',(e)=>{
-//      console.log(e.clientX,e.clientY);
-//  })
+ var extra_canvas_height=document.getElementById('level_container').offsetHeight;
 
- var extra_canvas_width=document.getElementById('level_container').offsetHeight;
- console.log(level_container.offsetHeight)
+ canvas.addEventListener('click',(e)=>{
+     console.log(e.clientX,e.clientY-extra_canvas_height);
+ })
+
+ console.log(extra_canvas_height);
 canvas.addEventListener('touchstart',(e)=>{
     const touchX=e.touches[0].clientX;
     const touchY=e.touches[0].clientY;
@@ -69,13 +70,13 @@ canvas.addEventListener('touchstart',(e)=>{
     ${startCord.x},${startCord.y},${touchX},${touchY}
  `
     if(touchX>=startCord.x && touchX<=startCord.x+iconSize &&
-        touchY>=startCord.y && touchY<=startCord.y+iconSize-extra_canvas_width
+        touchY>=startCord.y && touchY-extra_canvas_height<=startCord.y+iconSize
     ){
         alert('ij')
         game.start();
     }
     if(touchX>=leftarrowCord.x && touchX<=leftarrowCord.x+iconSize &&
-       touchY>=leftarrowCord.y && touchY<=leftarrowCord.y+iconSize-extra_canvas_width
+       touchY>=leftarrowCord.y && touchY-extra_canvas_height<=leftarrowCord.y+iconSize
     ){game.paddle.moveLeft()}
 })
 console.log(leftarrowCord)
