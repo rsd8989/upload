@@ -71,13 +71,13 @@ canvas.addEventListener('touchstart',(e)=>{
     ${startCord.x},${startCord.y},${touchX},${touchY}
  `
     if(touchX>=startCord.x && touchX<=startCord.x+iconSize &&
-        touchY>=startCord.y && touchY-extra_canvas_height<=startCord.y+iconSize
+        touchY-extra_canvas_height>=startCord.y && touchY-extra_canvas_height<=startCord.y+iconSize
     ){
         alert('ij')
         game.start();
     }
     if(touchX>=leftarrowCord.x && touchX<=leftarrowCord.x+iconSize &&
-       touchY>=leftarrowCord.y && touchY-extra_canvas_height<=leftarrowCord.y+iconSize
+       touchY-extra_canvas_height>=leftarrowCord.y && touchY-extra_canvas_height<=leftarrowCord.y+iconSize
     ){game.paddle.moveLeft()}
 })
 console.log(leftarrowCord)
