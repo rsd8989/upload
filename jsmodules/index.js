@@ -87,6 +87,22 @@ canvas.addEventListener('touchend',(e)=>{
     
 
 })
+canvas.addEventListener('tochcancel',(e)=>{
+    const touchX=e.touches[0].clientX;
+    const touchY=e.touches[0].clientY;
+    //alert('touche nded')
+    
+    game.paddle.stop();
+    // if(touchX>=leftarrowCord.x && touchX<=leftarrowCord.x+iconSize &&
+    //    touchY-extra_canvas_height>=leftarrowCord.y && touchY-extra_canvas_height<=leftarrowCord.y+iconSize
+    // ){game.paddle.stop()}
+
+    // if(touchX>=rightarrowCord.x && touchX<=rightarrowCord.x+iconSize &&
+    //     touchY-extra_canvas_height>=rightarrowCord.y && touchY-extra_canvas_height<=rightarrowCord.y+iconSize
+    //  ){game.paddle.stop()}
+    
+
+})
 
 
 
@@ -105,4 +121,4 @@ function gameLoop(){
 
 
 //
-//gameLoop();
+gameLoop();
