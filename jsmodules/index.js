@@ -74,7 +74,7 @@ canvas.addEventListener('touchstart',(e)=>{
 canvas.addEventListener('touchend',(e)=>{
     const touchX=e.touches[0].clientX;
     const touchY=e.touches[0].clientY;
-    alert('touche nded')
+    //alert('touche nded')
     
     game.paddle.stop();
     // if(touchX>=leftarrowCord.x && touchX<=leftarrowCord.x+iconSize &&
