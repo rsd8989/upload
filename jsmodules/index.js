@@ -66,6 +66,7 @@ ctx.drawImage(rightImage,rightarrowCord.x,rightarrowCord.y,iconSize,iconSize);
 canvas.addEventListener('touchstart',(e)=>{
     const touchX=e.touches[0].clientX;
     const touchY=e.touches[0].clientY;
+    alert(touchY-extra_canvas_height)
     level_info.innerHTML=`
     ${startCord.x},${startCord.y},${touchX},${touchY}
  `
