@@ -9,10 +9,6 @@ var screen_width=Math.floor(canvas_container.clientWidth/10)*10+2;
 var screen_height=Math.floor(canvas_container.clientHeight/10)*10+2;
 canvas.style.width=screen_width+"px";
 canvas.style.height=screen_height+"px";
-console.log(screen_width)
-console.log(screen_height)
-console.log("client widht")
-console.log(canvas.clientWidth,canvas.clientHeight)
 
 canvas.width=canvas.clientWidth;
 canvas.height=canvas.clientHeight;
@@ -48,39 +44,33 @@ var startCord={
     x:inputControllCenter,
     y:canvas.height-iconSize-10
 }
-ctx.drawImage(start,inputControllCenter,canvas.height-iconSize-10,iconSize,iconSize);
+ctx.drawImage(start,startCord.x,startCord.y,iconSize,iconSize);
 ctx.drawImage(leftImage,leftarrowCord.x,leftarrowCord.y,iconSize,iconSize);
 ctx.drawImage(rightImage,rightarrowCord.x,rightarrowCord.y,iconSize,iconSize);
- var level_info=document.getElementById('level_info')
- console.log(level_info)
- level_info.innerHTML=`
-    ${startCord.x},${startCord.y}
- `;
- var extra_canvas_height=document.getElementById('level_container').offsetHeight;
+ 
+var extra_canvas_height=document.getElementById('level_container').offsetHeight;
 
- canvas.addEventListener('click',(e)=>{
-     console.log(e.clientX,e.clientY-extra_canvas_height);
- })
-
- console.log(extra_canvas_height);
+//console.log(extra_canvas_height);
 canvas.addEventListener('touchstart',(e)=>{
     const touchX=e.touches[0].clientX;
     const touchY=e.touches[0].clientY;
-    alert(touchY-extra_canvas_height)
-    level_info.innerHTML=`
-    ${startCord.x},${startCord.y},${touchX},${touchY}
- `
+    
     if(touchX>=startCord.x && touchX<=startCord.x+iconSize &&
         touchY-extra_canvas_height>=startCord.y && touchY-extra_canvas_height<=startCord.y+iconSize
     ){
-        alert('ij')
         game.start();
     }
     if(touchX>=leftarrowCord.x && touchX<=leftarrowCord.x+iconSize &&
        touchY-extra_canvas_height>=leftarrowCord.y && touchY-extra_canvas_height<=leftarrowCord.y+iconSize
     ){game.paddle.moveLeft()}
+
+    if(touchX>=rightarrowCord.x && touchX<=rightarrowCord.x+iconSize &&
+        touchY-extra_canvas_height>=rightarrowCord.y && touchY-extra_canvas_height<=rightarrowCord.y+iconSize
+     ){game.paddle.moveRight()}
+    
+
 })
-console.log(leftarrowCord)
+
 
 function gameLoop(){
     ctx.clearRect(0,0,canvas.width,gameOverLine);
