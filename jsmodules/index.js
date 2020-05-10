@@ -42,7 +42,10 @@ var rightarrowCord={
     x:inputControllCenter+iconSize*2,
     y:canvas.height-iconSize-10
 }
-
+var startCord={
+    x:inputControllCenter,
+    y:canvas.height-iconSize-10
+}
 ctx.drawImage(start,inputControllCenter,canvas.height-iconSize-10,iconSize,iconSize);
 ctx.drawImage(leftImage,leftarrowCord.x,leftarrowCord.y,iconSize,iconSize);
 ctx.drawImage(rightImage,rightarrowCord.x,rightarrowCord.y,iconSize,iconSize);
@@ -50,8 +53,17 @@ ctx.drawImage(rightImage,rightarrowCord.x,rightarrowCord.y,iconSize,iconSize);
 canvas.addEventListener('touchstart',(e)=>{
     const touchX=e.touches[0].clientX;
     const touchY=e.touches[0].clientY;
-    alert(touchX,touchY)
+    if(touchX>=startCord.x && touchX<=startCord.x+iconSize &&
+        touchY>=startCord.y && touchY<=startCord.y+iconSize
+    ){
+        alert('ij')
+        game.start();
+    }
+    if(touchX>=leftarrowCord.x && touchX<=leftarrowCord.x+iconSize &&
+       touchY>=leftarrowCord.y && touchY<=leftarrowCord.y+iconSize
+    ){game.paddle.moveLeft()}
 })
+console.log(leftarrowCord)
 
 function gameLoop(){
     ctx.clearRect(0,0,canvas.width,gameOverLine);
