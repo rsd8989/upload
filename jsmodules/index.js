@@ -55,7 +55,13 @@ ctx.drawImage(rightImage,rightarrowCord.x,rightarrowCord.y,iconSize,iconSize);
  console.log(level_info)
  level_info.innerHTML=`
     ${startCord.x},${startCord.y}
- `
+ `;
+//  canvas.addEventListener('click',(e)=>{
+//      console.log(e.clientX,e.clientY);
+//  })
+
+ var extra_canvas_width=document.getElementById('level_container').offsetHeight;
+ console.log(level_container.offsetHeight)
 canvas.addEventListener('touchstart',(e)=>{
     const touchX=e.touches[0].clientX;
     const touchY=e.touches[0].clientY;
@@ -63,13 +69,13 @@ canvas.addEventListener('touchstart',(e)=>{
     ${startCord.x},${startCord.y},${touchX},${touchY}
  `
     if(touchX>=startCord.x && touchX<=startCord.x+iconSize &&
-        touchY>=startCord.y && touchY<=startCord.y+iconSize
+        touchY>=startCord.y && touchY<=startCord.y+iconSize-extra_canvas_width
     ){
         alert('ij')
         game.start();
     }
     if(touchX>=leftarrowCord.x && touchX<=leftarrowCord.x+iconSize &&
-       touchY>=leftarrowCord.y && touchY<=leftarrowCord.y+iconSize
+       touchY>=leftarrowCord.y && touchY<=leftarrowCord.y+iconSize-extra_canvas_width
     ){game.paddle.moveLeft()}
 })
 console.log(leftarrowCord)
