@@ -52,6 +52,7 @@ var extra_canvas_height=document.getElementById('level_container').offsetHeight;
 
 //console.log(extra_canvas_height);
 canvas.addEventListener('touchstart',(e)=>{
+    e.preventDefault();
     const touchX=e.touches[0].clientX;
     const touchY=e.touches[0].clientY;
     
